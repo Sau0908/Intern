@@ -1,0 +1,48 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@keyframes move {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  overflow: hidden; /* Hide the overflow to prevent scrolling */
+}
+
+
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 50px;
+  overflow: hidden;
+}
+
+.logo {
+  position: relative;
+  width: 90%;
+  aspect-ratio: 1/1;
+}
+
+.logo-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: move linear infinite;
+}
+
+.logo-duplicate {
+  animation-delay: 2.5s; /* Delay the start of duplicate logo animation */
+}
